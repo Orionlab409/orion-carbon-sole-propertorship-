@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion Carbon - Services</title>
+<style>
+/* -------------------- Reset & Fonts -------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #1a1a1a; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+/* -------------------- Header -------------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #0b1f34;
+  color: #fff;
+}
+.header .logo { font-weight: 700; font-size: 24px; }
+.header nav a { margin-left: 25px; font-weight: 600; color: #fff; }
+.header nav a:hover,
+.header nav a.active { color: #00bfff; }
+
+/* -------------------- Hero Section -------------------- */
+.hero { display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding: 120px 20px; background: #dceefc; }
+.hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
+.hero p { font-size: 20px; max-width: 700px; margin: 0 auto 30px auto; }
+
+/* Hero Buttons */
+.hero button {
+  background: #0077ff;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.hero button:hover { background: #005fcc; }
+
+/* -------------------- Services / BMC Cards -------------------- */
+.services { padding: 80px 20px; text-align: center; }
+.services h2 { font-size: 32px; margin-bottom: 40px; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.card h3 { font-size: 20px; margin-bottom: 10px; font-weight: 600; }
+.card p { font-size: 16px; color: #555; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
+
+/* MetaMask Section */
+.metamask { margin-top: 40px; }
+.metamask p { font-weight: 600; color: #0077ff; margin-bottom: 10px; }
+
+/* -------------------- Footer -------------------- */
+.footer { text-align: center; padding: 25px; background: #0b1f34; color: #fff; font-weight: 500; }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  .header { flex-direction: column; text-align: center; }
+  .header nav { margin-top: 10px; }
+  .hero h1 { font-size: 32px; }
+  .hero p { font-size: 18px; }
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="logo">Orion Carbon</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="pitch.html">Pitch</a>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Our Services</h1>
+  <p>Explore our blockchain-powered carbon credit solutions across the three core divisions of Orion Carbon.</p>
+</section>
+
+<!-- BMC Services Cards -->
+<section class="services">
+  <h2>Key Divisions</h2>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Key Activities</h3>
+      <p>Issuing carbon credits, managing trading platform, integrating blockchain technology for transparency.</p>
+      <button onclick="connectWallet('Activities')">Connect MetaMask</button>
+    </div>
+    <div class="card">
+      <h3>Value Propositions</h3>
+      <p>Transparent carbon credit tracking, efficient trading, sustainable impact and measurable environmental results.</p>
+      <button onclick="connectWallet('ValuePropositions')">Connect MetaMask</button>
+    </div>
+    <div class="card">
+      <h3>Revenue Streams</h3>
+      <p>Trading fees, subscription services, consulting and advisory on carbon markets and compliance.</p>
+      <button onclick="connectWallet('RevenueStreams')">Connect MetaMask</button>
+    </div>
+  </div>
+  <div class="metamask" id="wallet-status"></div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  &copy; 2025 Orion Carbon. All Rights Reserved.
+</footer>
+
+<script>
+async function connectWallet(section) {
+  if(window.ethereum) {
+    try {
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      document.getElementById('wallet-status').innerText = `MetaMask connected (${section}): ${accounts[0]}`;
+    } catch {
+      document.getElementById('wallet-status').innerText = `Connection rejected for ${section}`;
+    }
+  } else {
+    alert("MetaMask not detected. Please install MetaMask.");
+  }
+}
+</script>
+
+</body>
+</html>
