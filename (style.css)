@@ -1,13 +1,91 @@
-body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
-header { background:#1b1b1b; color:#fff; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; }
-header .logo { font-size:24px; font-weight:bold; }
-nav a { color:#fff; margin-left:20px; text-decoration:none; font-weight:bold; }
-nav a:hover { text-decoration:underline; }
-.hero { text-align:center; padding:80px 20px; background:#e0f7fa; }
-.hero h1 { font-size:48px; margin-bottom:20px; }
-.hero p { font-size:20px; margin-bottom:30px; }
-button { background:#0077ff; color:#fff; border:none; padding:12px 25px; font-size:16px; cursor:pointer; border-radius:5px; }
-button:hover { background:#005fcc; }
-.subscribe { text-align:center; padding:40px 20px; }
-.subscribe input[type=email] { padding:10px; width:250px; border-radius:5px; border:1px solid #ccc; margin-right:10px; }
-footer { background:#1b1b1b; color:#fff; text-align:center; padding:20px; }
+/* -------------------- Reset & Fonts -------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #1a1a1a; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+/* -------------------- Header -------------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #0b1f34;
+  color: #fff;
+}
+.header .logo { font-weight: 700; font-size: 24px; }
+.header nav a { margin-left: 25px; font-weight: 600; color: #fff; }
+.header nav a:hover { color: #00bfff; }
+
+/* -------------------- Hero Section -------------------- */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 120px 20px;
+  background: #e6f0ff;
+}
+.hero h1 { font-size: 48px; font-weight: 700; margin-bottom: 20px; }
+.hero p { font-size: 20px; margin-bottom: 30px; max-width: 700px; }
+.hero-buttons { margin-bottom: 20px; }
+.hero button {
+  background: #0077ff;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+}
+.hero button:hover { background: #005fcc; }
+.email-input {
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+/* -------------------- Status Messages -------------------- */
+.status { color: #0077ff; margin-top: 10px; font-weight: 600; }
+
+/* -------------------- Sections -------------------- */
+section { padding: 60px 20px; }
+section h2 { font-size: 32px; font-weight: 700; margin-bottom: 20px; text-align: center; }
+section p { font-size: 18px; max-width: 800px; margin: 0 auto 20px auto; text-align: center; }
+
+/* -------------------- BMC / Services -------------------- */
+.bmc {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px 50px;
+  background: #f0f0f0;
+}
+.bmc .card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.bmc .card h3 { font-size: 20px; margin-bottom: 10px; }
+.bmc .card p { font-size: 16px; color: #555; }
+
+/* -------------------- Footer -------------------- */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background: #0b1f34;
+  color: #fff;
+  font-weight: 500;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  .header { flex-direction: column; text-align: center; }
+  .header nav { margin-top: 10px; }
+  .hero h1 { font-size: 36px; }
+  .hero p { font-size: 18px; }
+}
