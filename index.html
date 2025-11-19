@@ -46,7 +46,6 @@ async function connectWallet() {
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
       document.getElementById('wallet-status').innerText = "Connected: " + accounts[0];
     } catch (err) {
-      console.error(err);
       document.getElementById('wallet-status').innerText = "Connection rejected.";
     }
   } else {
@@ -61,17 +60,4 @@ function subscribe() {
 }
 </script>
 </body>
-</html>body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
-header { background:#1b1b1b; color:#fff; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; }
-header .logo { font-size:24px; font-weight:bold; }
-nav a { color:#fff; margin-left:20px; text-decoration:none; font-weight:bold; }
-nav a:hover { text-decoration:underline; }
-.hero { text-align:center; padding:80px 20px; background:#e0f7fa; }
-.hero h1 { font-size:48px; margin-bottom:20px; }
-.hero p { font-size:20px; margin-bottom:30px; }
-button { background:#0077ff; color:#fff; border:none; padding:12px 25px; font-size:16px; cursor:pointer; border-radius:5px; }
-button:hover { background:#005fcc; }
-.subscribe { text-align:center; padding:40px 20px; }
-.subscribe input[type=email] { padding:10px; width:250px; border-radius:5px; border:1px solid #ccc; margin-right:10px; }
-footer { background:#1b1b1b; color:#fff; text-align:center; padding:20px; }
-
+</html>
