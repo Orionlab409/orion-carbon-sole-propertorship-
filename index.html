@@ -1,52 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion Carbon</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
-        header { background:#1b1b1b; color:#fff; padding:20px; text-align:center; }
-        nav a { color:#fff; text-decoration:none; margin:0 15px; font-weight:bold; }
-        main { padding:40px; text-align:center; }
-        button { background:#0077ff; color:#fff; border:none; padding:15px 25px; font-size:16px; cursor:pointer; border-radius:5px; }
-        button:hover { background:#005fcc; }
-        footer { background:#1b1b1b; color:#fff; text-align:center; padding:20px; position:fixed; bottom:0; width:100%; }
-        input[type=email] { padding:10px; width:250px; border-radius:5px; border:1px solid #ccc; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion Carbon - Home</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Orion Carbon</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Welcome to Orion Carbon</h2>
-        <p>Blockchain-based carbon credit issuance and trading platform.</p>
-        <div id="subscribe">
-            <h3>Subscribe for updates</h3>
-            <form onsubmit="subscribe(event)">
-                <input type="email" id="email" placeholder="Enter your email" required>
-                <button type="submit">Subscribe</button>
-            </form>
-            <p id="msg" style="color:green;"></p>
-        </div>
-    </main>
-    <footer>
-        &copy; 2025 Orion Carbon. All rights reserved.
-    </footer>
+<header>
+  <div class="logo">Orion Carbon</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+    <a href="pitch.html">Pitch</a>
+  </nav>
+</header>
 
-    <script>
-        function subscribe(e) {
-            e.preventDefault();
-            let email = document.getElementById('email').value;
-            document.getElementById('msg').innerText = `Thank you, ${email}, for subscribing!`;
-            document.getElementById('email').value = '';
-        }
-    </script>
+<main>
+  <section class="hero">
+    <h1>Orion Carbon</h1>
+    <p>Blockchain-based carbon credit issuance and trading platform</p>
+    <button onclick="connectWallet()">Connect MetaMask</button>
+    <p id="wallet-status"></p>
+  </section>
+
+  <section class="subscribe">
+    <h2>Subscribe for Updates</h2>
+    <input type="email" id="email" placeholder="Enter your email">
+    <button onclick="subscribe()">Subscribe</button>
+    <p id="msg"></p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Orion Carbon. All rights reserved.
+</footer>
+
+<script>
+async function connectWallet() {
+  if (window.ethereum) {
+    try {
+      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+      document.getElementById('wallet-status').innerText = "Connected: " + accounts[0];
+    } catch (err) {
+      console.error(err);
+      document.getElementById('wallet-status').innerText = "Connection rejected.";
+    }
+  } else {
+    alert("MetaMask not detected. Please install MetaMask.");
+  }
+}
+
+function subscribe() {
+  const email = document.getElementById('email').value;
+  document.getElementById('msg').innerText = `Thank you, ${email}, for subscribing!`;
+  document.getElementById('email').value = '';
+}
+</script>
 </body>
-</html>
+</html>body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; color:#333; }
+header { background:#1b1b1b; color:#fff; padding:15px 30px; display:flex; justify-content:space-between; align-items:center; }
+header .logo { font-size:24px; font-weight:bold; }
+nav a { color:#fff; margin-left:20px; text-decoration:none; font-weight:bold; }
+nav a:hover { text-decoration:underline; }
+.hero { text-align:center; padding:80px 20px; background:#e0f7fa; }
+.hero h1 { font-size:48px; margin-bottom:20px; }
+.hero p { font-size:20px; margin-bottom:30px; }
+button { background:#0077ff; color:#fff; border:none; padding:12px 25px; font-size:16px; cursor:pointer; border-radius:5px; }
+button:hover { background:#005fcc; }
+.subscribe { text-align:center; padding:40px 20px; }
+.subscribe input[type=email] { padding:10px; width:250px; border-radius:5px; border:1px solid #ccc; margin-right:10px; }
+footer { background:#1b1b1b; color:#fff; text-align:center; padding:20px; }
+
