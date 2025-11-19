@@ -4,8 +4,69 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orion Carbon - Home</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<style>
+/* -------------------- Reset & Fonts -------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #1a1a1a; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+/* -------------------- Header -------------------- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #0b1f34;
+  color: #fff;
+}
+.header .logo { font-weight: 700; font-size: 24px; }
+.header nav a { margin-left: 25px; font-weight: 600; color: #fff; }
+.header nav a:hover,
+.header nav a.active { color: #00bfff; }
+
+/* -------------------- Hero Section -------------------- */
+.hero { display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding: 120px 20px; background: #dceefc; }
+.hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
+.hero p { font-size: 20px; max-width: 700px; margin: 0 auto 30px auto; }
+
+/* Hero Buttons & Input */
+.hero-buttons { margin-bottom: 20px; }
+.hero button {
+  background: #0077ff;
+  border: none;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: 0 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.hero button:hover { background: #005fcc; }
+.email-input {
+  padding: 12px 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 300px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Status Messages */
+.status { color: #0077ff; margin-top: 10px; font-weight: 600; }
+
+/* -------------------- Footer -------------------- */
+.footer { text-align: center; padding: 25px; background: #0b1f34; color: #fff; font-weight: 500; }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  .header { flex-direction: column; text-align: center; }
+  .header nav { margin-top: 10px; }
+  .hero h1 { font-size: 32px; }
+  .hero p { font-size: 18px; }
+  .email-input { width: 80%; }
+}
+</style>
 <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
 </head>
 <body>
@@ -14,7 +75,7 @@
 <header class="header">
   <div class="logo">Orion Carbon</div>
   <nav>
-    <a href="index.html">Home</a>
+    <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
     <a href="contact.html">Contact</a>
@@ -25,7 +86,7 @@
 <!-- Hero Section -->
 <section class="hero">
   <h1>Leading Blockchain Carbon Credit Platform</h1>
-  <p>Transparent, efficient, and sustainable carbon credit issuance and trading.</p>
+  <p>Transparent, efficient, and sustainable carbon credit issuance and trading for industrial emitters and investors.</p>
   
   <div class="hero-buttons">
     <button onclick="connectWallet()">Connect MetaMask</button>
@@ -42,7 +103,6 @@
   &copy; 2025 Orion Carbon. All Rights Reserved.
 </footer>
 
-<!-- Scripts -->
 <script>
 async function connectWallet() {
   if (window.ethereum) {
