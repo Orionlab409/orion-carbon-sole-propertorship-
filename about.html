@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion Carbon - About Us</title>
+
+<!-- Load Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* -------------------- Reset & Fonts -------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #1a1a1a; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+/* -------------------- Header -------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3.125rem; /* 20px 50px */
+    background: #0b1f34;
+    color: #fff;
+}
+.header .logo { font-weight: 800; font-size: 1.5rem; } /* Adjusted to 800 */
+.header nav a { margin-left: 1.5625rem; font-weight: 600; color: #fff; transition: color 0.3s ease; }
+.header nav a:hover,
+.header nav a.active { color: #00bfff; }
+
+/* -------------------- Hero Section -------------------- */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 7.5rem 1.25rem; /* 120px 20px */
+    background: #dceefc;
+}
+.hero h1 { font-size: 2.625rem; font-weight: 800; margin-bottom: 1.25rem; color: #0b1f34;} /* 42px, Adjusted to 800 */
+.hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto; color: #333; font-weight: 600;}
+
+/* -------------------- Mission & Values Section -------------------- */
+.section { padding: 5rem 1.25rem; }
+.mission { text-align: center; background: #fff; }
+.mission h2, .synergy h2 { font-size: 2rem; font-weight: 800; margin-bottom: 0.75rem; color: #0b1f34; }
+.mission p { font-size: 1.125rem; max-width: 900px; margin: 0 auto 2.5rem auto; color: #555; }
+
+/* Values Grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.value-card {
+    background: #f5f7fa;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: left;
+    border-left: 4px solid #0077ff;
+    transition: all 0.3s ease;
+}
+.value-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #0b1f34;
+}
+.value-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0;
+}
+.value-card:hover {
+    box-shadow: 0 8px 15px rgba(0, 119, 255, 0.1);
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+/* -------------------- Synergy Section (BMC) -------------------- */
+.synergy {
+    background: #eef3f8;
+    text-align: center;
+}
+.synergy .intro {
+    font-size: 1.125rem;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    color: #333;
+}
+.synergy-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+}
+.synergy-icon {
+    font-size: 1.8rem;
+    color: #0077ff;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+.synergy-content h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0b1f34;
+    margin-bottom: 5px;
+}
+.synergy-content p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* -------------------- Footer -------------------- */
+.footer { text-align: center; padding: 1.5625rem; background: #0b1f34; color: #fff; font-weight: 500; }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+    .header { flex-direction: column; text-align: center; padding: 20px; }
+    .header nav { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; }
+    .header nav a { margin: 5px 10px; }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    .section { padding: 40px 15px; }
+    .synergy-item { flex-direction: column; text-align: center; }
+    .synergy-icon { margin: 0 auto 10px auto; }
+    .synergy-content { text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">Orion Carbon</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="pitch.html">Pitch</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Our Commitment: Nothing Less Than World-Class</h1>
+    <p>Orion Carbon is dedicated to delivering transparent, optimized, and impactful solutions in the South African carbon market, built on a foundation of integrity and technological excellence.</p>
+</section>
+
+<!-- Mission & Values Section -->
+<section class="section mission">
+    <h2>Our Mission & Principles</h2>
+    <p>To lead South Africa's transition to a low-carbon economy by providing auditable, blockchain-based carbon credits and fostering a skilled, green workforce.</p>
+
+    <div class="values-grid">
+        <div class="value-card">
+            <h3>Truth & Integrity</h3>
+            <p>Every credit we issue is grounded in verifiable data and rigorous MRV (Measurement, Reporting, and Verification) standards. We prioritize factual accuracy over market hype.</p>
+        </div>
+        <div class="value-card">
+            <h3>Excellence</h3>
+            <p>Our standard is "Nothing less than world-class." This drives our adoption of blockchain technology and our commitment to the highest quality project development and educational curricula.</p>
+        </div>
+        <div class="value-card">
+            <h3>Optimization</h3>
+            <p>We use smart contracts and digital platforms to streamline the carbon credit lifecycle, reducing friction, cost, and time for our clients and maximizing environmental impact.</p>
+        </div>
+        <div class="value-card">
+            <h3>Transparency</h3>
+            <p>By tokenizing credits on the blockchain, we provide an immutable, publicly auditable record for every credit's origin, ownership, and eventual retirement, eliminating double counting.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Synergy Section (BMC Integration) -->
+<section class="section synergy">
+    <h2>Inter-Division Synergy: Our Unique Model</h2>
+    <p class="intro">Unlike traditional carbon brokers, Orion Carbon operates as a closed-loop ecosystem. Our three divisions—Development, Tokenization, and Academy—are strategically interlinked to create maximum value and ensure unparalleled operational integrity.</p>
+    [Image of Business Model Canvas Synergies]
+
+    <div class="values-grid">
+        <!-- Synergy 1 -->
+        <div class="synergy-item">
+            <div class="synergy-icon">🔗</div>
+            <div class="synergy-content">
+                <h4>Development Feeds Tokenization</h4>
+                <p>The **Development Division** creates the supply (verified carbon credits), which immediately flow to the **Tokenization Division** to become digital assets sold on the marketplace.</p>
+            </div>
+        </div>
+        <!-- Synergy 2 -->
+        <div class="synergy-item">
+            <div class="synergy-icon">🎓</div>
+            <div class="synergy-content">
+                <h4>Academy Feeds Development</h4>
+                <p>The **Orion Academy** supplies the demand for human capital. Academy graduates perform the data collection and MRV fieldwork required by the **Development Division’s** projects, ensuring high-quality data.</p>
+            </div>
+        </div>
+        <!-- Synergy 3 -->
+        <div class="synergy-item">
+            <div class="synergy-icon">💰</div>
+            <div class="synergy-content">
+                <h4>Tokenization Funds Academy</h4>
+                <p>A portion of the trading fees generated by the **Tokenization Division** is dedicated to funding bursaries and resources for the **Orion Academy**, sustaining our social impact mandate.</p>
+            </div>
+        </div>
+        <!-- Synergy 4 -->
+        <div class="synergy-item">
+            <div class="synergy-icon">🛡️</div>
+            <div class="synergy-content">
+                <h4>Ecosystem Positions Orion</h4>
+                <p>This integrated model—from MRV/Verification to Training and Tokenization—is unique in South Africa, guaranteeing maximum control over quality, transparency, and market placement.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    &copy; 2025 Orion Carbon. All Rights Reserved. Committed to Excellence and Transparency.
+</footer>
+
+<script src="https://cdn.tailwindcss.com"></script>
+</body>
+</html>
