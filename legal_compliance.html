@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion Carbon - Legal & Compliance</title>
+
+<!-- Load Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* -------------------- Reset & Fonts -------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #1a1a1a; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+/* -------------------- Header -------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3.125rem;
+    background: #0b1f34;
+    color: #fff;
+}
+.header .logo { font-weight: 800; font-size: 1.5rem; }
+.header nav a {
+    margin-left: 1.5625rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.header nav a:hover,
+.header nav a.active { color: #00bfff; }
+
+/* -------------------- Main Content -------------------- */
+.main-content {
+    max-width: 900px;
+    margin: 4rem auto;
+    padding: 0 1.25rem;
+}
+.main-content h1 {
+    font-size: 2.625rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #0b1f34;
+    text-align: center;
+}
+.section {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+.section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #0077ff;
+    border-bottom: 2px solid #dceefc;
+    padding-bottom: 10px;
+}
+.section p {
+    margin-bottom: 15px;
+    color: #444;
+}
+.section ul {
+    margin-left: 20px;
+    list-style-type: disc;
+    color: #444;
+}
+
+/* -------------------- Footer -------------------- */
+.footer { text-align: center; padding: 1.5625rem; background: #0b1f34; color: #fff; font-weight: 500; }
+.footer .legal-links a {
+    color: #00bfff;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+.footer .legal-links a:hover { color: #fff; }
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+    .header { flex-direction: column; text-align: center; padding: 20px; }
+    .header nav { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; }
+    .header nav a { margin: 5px 10px; }
+    .main-content h1 { font-size: 2rem; }
+    .section { padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">Orion Carbon</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="legal_compliance.html" class="active">Legal & Compliance</a>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h1>Legal & Regulatory Framework</h1>
+    <p style="text-align: center; margin-bottom: 3rem; color: #555;">
+        Demonstrating **Transparency** and adherence to **Excellence** through comprehensive documentation. Last Updated: November 2025.
+    </p>
+
+    <!-- Privacy Policy Section -->
+    <div class="section">
+        <h2>1. Privacy Policy</h2>
+        <p>Orion Carbon ("We," "Us") is committed to protecting your privacy. This policy explains how we collect, use, and share personal information when you use our services, website, or blockchain platform.</p>
+        
+        <h3>Information Collection</h3>
+        <p>We collect information you provide directly to us, such as name, email, and contact number (e.g., during inquiry submissions or MRV Academy enrollment).</p>
+        
+        <h3>Blockchain Data</h3>
+        <p>Please note that data related to carbon credit transactions (e.g., wallet addresses, transaction hashes, token balances) recorded on the public ledger are inherently transparent and immutable. We only link this public data to private user identity as required for regulatory compliance.</p>
+        
+        <h3>Data Security</h3>
+        <p>We use industry-standard encryption and security measures to protect your data. All team communications related to sensitive data adhere to strict, zero-trust protocols.</p>
+    </div>
+
+    <!-- Terms of Service Section -->
+    <div class="section">
+        <h2>2. Terms of Service</h2>
+        <p>By accessing or using the Orion Carbon platform, you agree to comply with and be bound by these Terms of Service. These terms govern your use of our Carbon Credit Development, Tokenization, and MRV Academy services.</p>
+        
+        <h3>Platform Use</h3>
+        <p>The Orion Carbon platform is designed for professional use in the compliance and voluntary carbon markets. Unauthorized use, scraping, or attempts to manipulate our blockchain assets are strictly prohibited and may result in legal action.</p>
+        
+        <h3>Liability</h3>
+        <p>Orion Carbon is a facilitator and technology provider. While we strive for **Excellence**, we are not responsible for market fluctuations, regulatory changes in the Carbon Tax Act, or actions taken by third-party verifiers (e.g., SGS). Our liability is limited to the fees paid for our services.</p>
+        
+        <h3>Governing Law</h3>
+        <p>These terms shall be governed and construed in accordance with the laws of South Africa, without regard to its conflict of law provisions.</p>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="legal-links">
+        <a href="#privacy">Privacy Policy</a>
+        |
+        <a href="#terms">Terms of Service</a>
+    </div>
+    &copy; 2025 Orion Carbon. All Rights Reserved. Committed to Excellence and Transparency.
+</footer>
+
+<!-- External Scripts (only Tailwind needed here) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+</html>
