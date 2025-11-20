@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orion Carbon - Home</title>
+
+<!-- Load Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 /* -------------------- Reset & Fonts -------------------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,117 +15,226 @@ a { text-decoration: none; color: inherit; }
 
 /* -------------------- Header -------------------- */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background: #0b1f34;
-  color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3.125rem; /* 20px 50px */
+    background: #0b1f34;
+    color: #fff;
 }
-.header .logo { font-weight: 700; font-size: 24px; }
-.header nav a { margin-left: 25px; font-weight: 600; color: #fff; }
+.header .logo { font-weight: 800; font-size: 1.5rem; }
+.header nav a {
+    margin-left: 1.5625rem; /* 25px */
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+}
 .header nav a:hover,
 .header nav a.active { color: #00bfff; }
 
 /* -------------------- Hero Section -------------------- */
-.hero { display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding: 120px 20px; background: #dceefc; }
-.hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
-.hero p { font-size: 20px; max-width: 700px; margin: 0 auto 30px auto; }
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 7.5rem 1.25rem; /* 120px 20px */
+    background: #dceefc;
+}
+.hero h1 {
+    font-size: 2.8rem; /* 42px */
+    font-weight: 800;
+    margin-bottom: 1.25rem; /* 20px */
+    color: #0b1f34;
+}
+.hero p {
+    font-size: 1.25rem; /* 20px */
+    max-width: 700px;
+    margin: 0 auto 1.875rem auto; /* 30px */
+    color: #333;
+}
 
 /* Hero Buttons & Input */
-.hero-buttons { margin-bottom: 20px; }
+.hero-buttons { margin-bottom: 1.25rem; } /* 20px */
 .hero button {
-  background: #0077ff;
-  border: none;
-  color: #fff;
-  padding: 15px 30px;
-  font-size: 16px;
-  border-radius: 8px;
-  margin: 0 10px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+    background: #0077ff;
+    border: none;
+    color: #fff;
+    padding: 0.9375rem 1.875rem; /* 15px 30px */
+    font-size: 1rem;
+    border-radius: 8px;
+    margin: 0 0.625rem; /* 10px */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 119, 255, 0.3);
 }
-.hero button:hover { background: #005fcc; }
+.hero button:hover {
+    background: #005fcc;
+    box-shadow: 0 6px 15px rgba(0, 119, 255, 0.5);
+}
 .email-input {
-  padding: 12px 20px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: 300px;
-  margin-bottom: 10px;
-  text-align: center;
+    padding: 0.75rem 1.25rem; /* 12px 20px */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: min(90%, 350px);
+    margin-bottom: 0.625rem; /* 10px */
+    text-align: center;
 }
 
-/* Status Messages */
-.status { color: #0077ff; margin-top: 10px; font-weight: 600; }
+/* Status Messages (Custom Alert/Message Box) */
+.status-box {
+    margin-top: 1.25rem; /* 20px */
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    min-height: 40px; /* Ensure space even when empty */
+    transition: all 0.4s ease;
+    max-width: 400px;
+    width: 90%;
+}
+.status-success {
+    background: #d0f0d0; /* Light green */
+    color: #047857; /* Dark green */
+    border: 1px solid #10b981;
+}
+.status-error {
+    background: #fee2e2; /* Light red */
+    color: #991b1b; /* Dark red */
+    border: 1px solid #ef4444;
+}
+.status-default {
+    background: transparent;
+    color: #0077ff;
+    border: none;
+}
 
 /* -------------------- Footer -------------------- */
-.footer { text-align: center; padding: 25px; background: #0b1f34; color: #fff; font-weight: 500; }
+.footer { text-align: center; padding: 1.5625rem; background: #0b1f34; color: #fff; font-weight: 500; }
 
 /* -------------------- Responsive -------------------- */
 @media (max-width: 768px) {
-  .header { flex-direction: column; text-align: center; }
-  .header nav { margin-top: 10px; }
-  .hero h1 { font-size: 32px; }
-  .hero p { font-size: 18px; }
-  .email-input { width: 80%; }
+    .header { flex-direction: column; text-align: center; padding: 20px; }
+    .header nav { margin-top: 10px; }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    .email-input { width: 90%; }
+    .hero button { display: block; width: 80%; margin: 10px auto; }
 }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
 </head>
 <body>
 
 <!-- Header -->
 <header class="header">
-  <div class="logo">Orion Carbon</div>
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-    <a href="pitch.html">Pitch</a>
-  </nav>
+    <div class="logo">Orion Carbon</div>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="pitch.html">Pitch</a>
+    </nav>
 </header>
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Leading Blockchain Carbon Credit Platform</h1>
-  <p>Transparent, efficient, and sustainable carbon credit issuance and trading for industrial emitters and investors.</p>
-  
-  <div class="hero-buttons">
-    <button onclick="connectWallet()">Connect MetaMask</button>
-    <button onclick="subscribe()">Subscribe</button>
-  </div>
+    <h1>Leading Blockchain Carbon Credit Platform</h1>
+    <p>Transparent, efficient, and sustainable carbon credit issuance and trading for industrial emitters and investors. Nothing less than world-class.</p>
 
-  <input type="email" id="email" placeholder="Enter your email" class="email-input">
-  <p id="wallet-status" class="status"></p>
-  <p id="msg" class="status"></p>
+    <div class="hero-buttons">
+        <button onclick="connectWallet()">Connect MetaMask Wallet</button>
+        <button onclick="subscribe()">Subscribe to Our Newsletter</button>
+    </div>
+
+    <input type="email" id="email" placeholder="Enter your email" class="email-input">
+
+    <!-- Unified Status Message Box for all feedback -->
+    <div id="status-message" class="status-box status-default">Click 'Connect MetaMask Wallet' to begin your journey to Transparency.</div>
 </section>
 
 <!-- Footer -->
 <footer class="footer">
-  &copy; 2025 Orion Carbon. All Rights Reserved.
+    &copy; 2025 Orion Carbon. All Rights Reserved. Committed to Excellence and Transparency.
 </footer>
 
+<!-- External Scripts loaded at the end for stability -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Using the stable UMD version of Ethers.js (v5.7.2) to prevent module syntax errors. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+
 <script>
-async function connectWallet() {
-  if (window.ethereum) {
-    try {
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-      document.getElementById('wallet-status').innerText = "Connected: " + accounts[0];
-    } catch {
-      document.getElementById('wallet-status').innerText = "Connection rejected.";
+// Helper function for displaying messages in the custom box
+function displayMessage(message, type = 'default') {
+    const statusElement = document.getElementById('status-message');
+    statusElement.innerHTML = message;
+    statusElement.className = `status-box status-${type}`;
+
+    // Clear message after a few seconds unless it's a persistent prompt
+    if (type === 'success' || type === 'error') {
+        setTimeout(() => {
+            // Restore default message state
+            statusElement.innerHTML = "Click 'Connect MetaMask Wallet' to begin your journey to Transparency.";
+            statusElement.className = 'status-box status-default';
+        }, 5000);
     }
-  } else {
-    alert("MetaMask not detected. Please install MetaMask.");
-  }
 }
 
+/**
+ * Connects the user's MetaMask wallet.
+ */
+async function connectWallet() {
+    if (window.ethereum) {
+        try {
+            displayMessage("Attempting to connect...", 'default');
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+
+            if (accounts.length === 0) {
+                displayMessage("Connection error: No accounts found.", 'error');
+                return;
+            }
+
+            const connectedAccount = accounts[0];
+            const displayAccount = `${connectedAccount.substring(0, 6)}...${connectedAccount.substring(connectedAccount.length - 4)}`;
+
+            displayMessage(`✅ Wallet Connected: ${displayAccount}`, 'success');
+
+        } catch (error) {
+            console.error("MetaMask connection error:", error);
+            if (error.code === 4001) {
+                 displayMessage("⚠️ Connection Rejected: Please authorize MetaMask.", 'error');
+            } else {
+                displayMessage(`❌ Connection Failed. Error: ${error.message || 'Unknown issue.'}`, 'error');
+            }
+        }
+    } else {
+        displayMessage("❌ MetaMask Not Detected. Please install the browser extension to connect.", 'error');
+    }
+}
+
+/**
+ * Handles the email subscription.
+ */
 function subscribe() {
-  const email = document.getElementById('email').value;
-  if(email) {
-    document.getElementById('msg').innerText = `Thank you, ${email}, for subscribing!`;
-    document.getElementById('email').value = '';
-  }
+    const emailInput = document.getElementById('email');
+    const email = emailInput.value.trim();
+
+    // Basic email format check
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email) {
+        if (emailRegex.test(email)) {
+            // In a real application, this would involve a fetch() request to a backend service.
+            displayMessage(`Thank you, ${email}, for subscribing! We value your interest in our Transparency.`, 'success');
+            emailInput.value = '';
+        } else {
+            displayMessage('Please enter a valid email address.', 'error');
+        }
+    } else {
+        displayMessage('Please enter your email address to subscribe.', 'error');
+    }
 }
 </script>
 
