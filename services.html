@@ -4,131 +4,317 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orion Carbon - Services</title>
+
+<!-- Load Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-/* -------------------- Reset & Fonts -------------------- */
+/* -------------------- Custom Styles for Inter Font and BMC Consistency -------------------- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body, html { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #1a1a1a; line-height: 1.6; }
 a { text-decoration: none; color: inherit; }
 
 /* -------------------- Header -------------------- */
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  background: #0b1f34;
-  color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3.125rem; /* 20px 50px */
+    background: #0b1f34;
+    color: #fff;
 }
-.header .logo { font-weight: 700; font-size: 24px; }
-.header nav a { margin-left: 25px; font-weight: 600; color: #fff; }
+.header .logo { font-weight: 800; font-size: 1.5rem; } /* Adjusted to 800 for consistency */
+.header nav a {
+    margin-left: 1.5625rem; /* 25px */
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+}
 .header nav a:hover,
 .header nav a.active { color: #00bfff; }
 
 /* -------------------- Hero Section -------------------- */
-.hero { display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center; padding: 120px 20px; background: #dceefc; }
-.hero h1 { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
-.hero p { font-size: 20px; max-width: 700px; margin: 0 auto 30px auto; }
-
-/* Hero Buttons */
-.hero button {
-  background: #0077ff;
-  border: none;
-  color: #fff;
-  padding: 15px 30px;
-  font-size: 16px;
-  border-radius: 8px;
-  margin: 10px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 7.5rem 1.25rem; /* 120px 20px */
+    background: #dceefc;
 }
-.hero button:hover { background: #005fcc; }
+.hero h1 { font-size: 2.625rem; font-weight: 800; margin-bottom: 1.25rem; } /* 42px, Adjusted to 800 */
+.hero p { font-size: 1.25rem; max-width: 700px; margin: 0 auto 1.875rem auto; color: #333; }
 
 /* -------------------- Services / BMC Cards -------------------- */
-.services { padding: 80px 20px; text-align: center; }
-.services h2 { font-size: 32px; margin-bottom: 40px; }
-.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 6px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-.card h3 { font-size: 20px; margin-bottom: 10px; font-weight: 600; }
-.card p { font-size: 16px; color: #555; }
-.card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
+.services { padding: 5rem 1.25rem; text-align: center; } /* 80px 20px */
+.services h2 { font-size: 2rem; font-weight: 700; margin-bottom: 2.5rem; color: #0b1f34; } /* 32px */
 
-/* MetaMask Section */
-.metamask { margin-top: 40px; }
-.metamask p { font-weight: 600; color: #0077ff; margin-bottom: 10px; }
+/* Division Card Layout */
+.division-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 40px;
+    text-align: left;
+    border-top: 5px solid #0077ff;
+    transition: all 0.3s ease;
+}
+.division-card:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+}
+
+.division-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0b1f34;
+    margin-bottom: 5px;
+}
+.division-card .output {
+    font-size: 14px;
+    font-weight: 600;
+    color: #00bfff;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.service-item {
+    background: #f5f7fa;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+.service-item h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0077ff;
+    margin-bottom: 5px;
+}
+.service-item p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+}
+
+.metamask-status {
+    margin-top: 40px;
+    padding: 20px;
+    background: #e0f2fe;
+    color: #0b1f34;
+    border-radius: 12px;
+    font-weight: 600;
+    text-align: center;
+    border: 1px solid #00bfff;
+}
 
 /* -------------------- Footer -------------------- */
-.footer { text-align: center; padding: 25px; background: #0b1f34; color: #fff; font-weight: 500; }
+.footer { text-align: center; padding: 1.5625rem; background: #0b1f34; color: #fff; font-weight: 500; }
 
 /* -------------------- Responsive -------------------- */
 @media (max-width: 768px) {
-  .header { flex-direction: column; text-align: center; }
-  .header nav { margin-top: 10px; }
-  .hero h1 { font-size: 32px; }
-  .hero p { font-size: 18px; }
+    .header { flex-direction: column; text-align: center; padding: 20px 20px; }
+    .header nav { margin-top: 15px; display: flex; flex-direction: column; }
+    .header nav a { margin: 5px 0; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; }
+    .services { padding: 40px 15px; }
+    .division-card { padding: 20px; }
+}
+
+/* Connect Button Styling */
+.connect-btn {
+    background: #0077ff;
+    border: none;
+    color: #fff;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    display: inline-block;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0, 119, 255, 0.3);
+}
+.connect-btn:hover {
+    background: #005fcc;
+    box-shadow: 0 6px 15px rgba(0, 119, 255, 0.5);
 }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
 </head>
 <body>
 
 <!-- Header -->
 <header class="header">
-  <div class="logo">Orion Carbon</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html" class="active">Services</a>
-    <a href="contact.html">Contact</a>
-    <a href="pitch.html">Pitch</a>
-  </nav>
+    <div class="logo">Orion Carbon</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+        <a href="pitch.html">Pitch</a>
+    </nav>
 </header>
 
 <!-- Hero Section -->
 <section class="hero">
-  <h1>Our Services</h1>
-  <p>Explore our blockchain-powered carbon credit solutions across the three core divisions of Orion Carbon.</p>
+    <h1>Our Integrated Carbon Solutions</h1>
+    <p>We deliver world-class, transparent carbon management through three synergistic divisions: Development, Tokenization, and Training. Nothing less than world-class.</p>
 </section>
 
-<!-- BMC Services Cards -->
+<!-- BMC Services - Division 1 -->
 <section class="services">
-  <h2>Key Divisions</h2>
-  <div class="card-grid">
-    <div class="card">
-      <h3>Key Activities</h3>
-      <p>Issuing carbon credits, managing trading platform, integrating blockchain technology for transparency.</p>
-      <button onclick="connectWallet('Activities')">Connect MetaMask</button>
+    <h2>Our Three Key Divisions</h2>
+
+    <!-- Division 1: Carbon Credit Development -->
+    <div class="division-card">
+        <h3>🌍 BMC 1 — Carbon Credit Development</h3>
+        <div class="output">Division Output: Verified Carbon Credits (Supply)</div>
+
+        <div class="service-grid">
+            <div class="service-item">
+                <h4>Value Proposition</h4>
+                <p>We turn South African emission-reducing projects into verified carbon credits that meet national MRV and Carbon Budget standards.</p>
+            </div>
+            <div class="service-item">
+                <h4>Key Activities</h4>
+                <p>Baseline studies, data collection via sensors/field staff, verification coordination under Carbon Budget Rules, and submission to registries.</p>
+            </div>
+            <div class="service-item">
+                <h4>Customer Segments</h4>
+                <p>Large emitters regulated under the Carbon Tax Act, renewable developers (solar, biogas), municipal departments, and NGO climate projects.</p>
+            </div>
+            <div class="service-item">
+                <h4>Revenue Streams</h4>
+                <p>Project development fees (R25k–R100k), annual monitoring/MRV fees (R12k–R30k), and a success fee (10–20% of verified credits sold).</p>
+            </div>
+        </div>
+        <button class="connect-btn" onclick="connectWallet('CreditDevelopment')">Explore Development Services</button>
     </div>
-    <div class="card">
-      <h3>Value Propositions</h3>
-      <p>Transparent carbon credit tracking, efficient trading, sustainable impact and measurable environmental results.</p>
-      <button onclick="connectWallet('ValuePropositions')">Connect MetaMask</button>
+
+    <!-- Division 2: Tokenization Division -->
+    <div class="division-card">
+        <h3>🌐 BMC 2 — Tokenization Division</h3>
+        <div class="output">Division Output: Traceable Digital Carbon Credits (Marketplace)</div>
+
+        <div class="service-grid">
+            <div class="service-item">
+                <h4>Value Proposition</h4>
+                <p>We convert verified carbon credits into blockchain-backed digital assets that cannot be duplicated, lost, or double-counted, ensuring transparency.</p>
+            </div>
+            <div class="service-item">
+                <h4>Key Activities</h4>
+                <p>Minting digital carbon tokens (1:1), credit lifecycle tracking, retirement management, and marketplace operations.</p>
+            </div>
+            <div class="service-item">
+                <h4>Customer Segments</h4>
+                <p>Regulated emitters needing offsets, ESG investors, carbon traders, and project owners wanting faster liquidity.</p>
+            </div>
+            <div class="service-item">
+                <h4>Revenue Streams</h4>
+                <p>Tokenization fees (R5–R20 per credit), trading fees (0.5–1.5%), and corporate custody accounts (R500–R1,000/year).</p>
+            </div>
+        </div>
+        <button class="connect-btn" onclick="connectWallet('Tokenization')">Access the Digital Marketplace</button>
     </div>
-    <div class="card">
-      <h3>Revenue Streams</h3>
-      <p>Trading fees, subscription services, consulting and advisory on carbon markets and compliance.</p>
-      <button onclick="connectWallet('RevenueStreams')">Connect MetaMask</button>
+
+    <!-- Division 3: Orion Academy -->
+    <div class="division-card">
+        <h3>🎓 BMC 3 — Orion Academy</h3>
+        <div class="output">Division Output: Trained MRV Workforce (Human Capital)</div>
+
+        <div class="service-grid">
+            <div class="service-item">
+                <h4>Value Proposition</h4>
+                <p>We train South African youth to perform carbon monitoring and reporting, giving them immediate access to green, high-excellence jobs.</p>
+            </div>
+            <div class="service-item">
+                <h4>Key Activities</h4>
+                <p>Training delivery (online + physical), certification, MRV field placement, and corporate climate reporting training.</p>
+            </div>
+            <div class="service-item">
+                <h4>Customer Segments</h4>
+                <p>Unemployed youth seeking green jobs, corporates needing climate-reporting skills, and municipalities/NGOs needing training.</p>
+            </div>
+            <div class="service-item">
+                <h4>Revenue Streams</p>
+                <p>Course fees (R350–R5,000), corporate training fees (R8,000/day), and grants/youth development funding.</p>
+            </div>
+        </div>
+        <button class="connect-btn" onclick="connectWallet('OrionAcademy')">Enroll in the Academy</button>
     </div>
-  </div>
-  <div class="metamask" id="wallet-status"></div>
+
+    <!-- Wallet Status Display -->
+    <div class="metamask-status" id="wallet-status">Connect your wallet to interact with our blockchain services.</div>
+
 </section>
 
 <!-- Footer -->
 <footer class="footer">
-  &copy; 2025 Orion Carbon. All Rights Reserved.
+    &copy; 2025 Orion Carbon. All Rights Reserved. Committed to Excellence and Transparency.
 </footer>
 
+<!-- External Scripts loaded here for stability and performance -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Using the stable UMD version of Ethers.js (v5.7.2) to prevent module syntax errors. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+
 <script>
+/**
+ * Global function to connect a MetaMask wallet.
+ * In a real application, this would trigger specific division-related logic
+ * (e.g., viewing credit balance, enrolling, submitting a project).
+ *
+ * @param {string} section - The section attempting to connect the wallet.
+ */
 async function connectWallet(section) {
-  if(window.ethereum) {
-    try {
-      const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-      document.getElementById('wallet-status').innerText = `MetaMask connected (${section}): ${accounts[0]}`;
-    } catch {
-      document.getElementById('wallet-status').innerText = `Connection rejected for ${section}`;
+    const statusElement = document.getElementById('wallet-status');
+    // Using a custom modal/message box instead of alert()
+    const showMessage = (message, isError = false) => {
+        statusElement.innerHTML = message;
+        statusElement.style.backgroundColor = isError ? '#fee2e2' : '#d0f0d0';
+        statusElement.style.borderColor = isError ? '#ef4444' : '#10b981';
+        statusElement.style.color = isError ? '#991b1b' : '#047857';
+    };
+
+    if (window.ethereum) {
+        try {
+            // Request account access
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            if (accounts.length === 0) {
+                showMessage(`Connection error: No accounts found.`, true);
+                return;
+            }
+
+            const connectedAccount = accounts[0];
+
+            // In a production app, the 'ethers' library would be used for transactions
+            // const provider = new ethers.providers.Web3Provider(window.ethereum);
+            // const signer = provider.getSigner();
+
+            showMessage(`✅ Success! Wallet connected for ${section}: ${connectedAccount.substring(0, 6)}...${connectedAccount.substring(connectedAccount.length - 4)}`);
+
+        } catch (error) {
+            // Handle user rejection or other errors
+            if (error.code === 4001) {
+                showMessage(`⚠️ Connection rejected. Please authorize MetaMask to continue.`, true);
+            } else {
+                console.error("MetaMask connection error:", error);
+                showMessage(`❌ Failed to connect wallet. Error: ${error.message || 'Unknown issue.'}`, true);
+            }
+        }
+    } else {
+        showMessage(`❌ MetaMask not detected. Please install the browser extension to use our blockchain services.`, true);
+        console.warn("MetaMask is not installed.");
     }
-  } else {
-    alert("MetaMask not detected. Please install MetaMask.");
-  }
 }
 </script>
 
