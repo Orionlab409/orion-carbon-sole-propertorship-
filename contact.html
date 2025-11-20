@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion Carbon - Contact</title>
+
+<!-- Load Inter Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* -------------------- Reset & Fonts -------------------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { font-family: 'Inter', sans-serif; background: #f5f7fa; color: #1a1a1a; line-height: 1.6; }
+a { text-decoration: none; color: inherit; }
+
+/* -------------------- Header -------------------- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3.125rem; /* 20px 50px */
+    background: #0b1f34;
+    color: #fff;
+}
+.header .logo { font-weight: 800; font-size: 1.5rem; }
+.header nav a {
+    margin-left: 1.5625rem;
+    font-weight: 600;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.header nav a:hover,
+.header nav a.active { color: #00bfff; }
+
+/* -------------------- Hero Section -------------------- */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 7.5rem 1.25rem; /* 120px 20px */
+    background: #dceefc;
+}
+.hero h1 { font-size: 2.625rem; font-weight: 800; margin-bottom: 1rem; color: #0b1f34; }
+.hero p { font-size: 1.25rem; max-width: 800px; margin: 0 auto; color: #333; }
+
+/* -------------------- Main Content (Form and Links) -------------------- */
+.content-wrapper {
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 4rem auto; /* 64px */
+    padding: 0 1.25rem; /* 20px */
+}
+
+/* Contact Form */
+.contact-form-container {
+    flex: 2;
+    background: #fff;
+    padding: 2.5rem; /* 40px */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.contact-form-container h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #0b1f34;
+}
+
+.form-group { margin-bottom: 1.25rem; }
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.95rem;
+    color: #333;
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #0077ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 119, 255, 0.2);
+}
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.submit-btn {
+    background: #0077ff;
+    border: none;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 119, 255, 0.3);
+}
+.submit-btn:hover {
+    background: #005fcc;
+    box-shadow: 0 6px 15px rgba(0, 119, 255, 0.5);
+}
+
+/* Strategic Links & Status */
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.strategic-links {
+    background: #eef3f8;
+    padding: 25px;
+    border-radius: 12px;
+    border-top: 5px solid #00bfff;
+}
+.strategic-links h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #0b1f34;
+}
+.strategic-links a {
+    display: block;
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-weight: 600;
+    color: #0077ff;
+    transition: all 0.3s ease;
+}
+.strategic-links a:hover {
+    background: #dceefc;
+    border-color: #0077ff;
+    transform: translateX(5px);
+}
+
+/* Status Message Box */
+.status-box {
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    min-height: 40px;
+    transition: all 0.4s ease;
+    width: 100%;
+}
+.status-success { background: #d0f0d0; color: #047857; border: 1px solid #10b981; }
+.status-error { background: #fee2e2; color: #991b1b; border: 1px solid #ef4444; }
+.status-default { background: #fff; color: #333; border: 1px solid #eee; }
+
+/* -------------------- Footer -------------------- */
+.footer { text-align: center; padding: 1.5625rem; background: #0b1f34; color: #fff; font-weight: 500; }
+.footer .legal-links a {
+    color: #00bfff;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+.footer .legal-links a:hover { color: #fff; }
+
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 1024px) {
+    .content-wrapper { flex-direction: column; }
+    .contact-form-container, .sidebar { flex: none; width: 100%; }
+}
+@media (max-width: 768px) {
+    .header { flex-direction: column; text-align: center; padding: 20px; }
+    .header nav { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; }
+    .header nav a { margin: 5px 10px; }
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+    .footer .legal-links a { display: block; margin: 10px 0; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="logo">Orion Carbon</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="pitch.html">Pitch</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Connect with Our Leadership</h1>
+    <p>Whether you are an industrial emitter, a project developer, or a future MRV trainee, reach out to us. We operate with **Excellence** and **Truth** at every step.</p>
+</section>
+
+<!-- Main Content Wrapper -->
+<div class="content-wrapper">
+
+    <!-- Left: Contact Form -->
+    <div class="contact-form-container">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message / Inquiry Details</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Inquiry</button>
+        </form>
+
+        <!-- Status Message Box -->
+        <div id="status-message" class="status-box status-default" style="margin-top: 20px;">
+            We aim to respond to all inquiries within 24 hours.
+        </div>
+    </div>
+
+    <!-- Right: Strategic Links & Information -->
+    <div class="sidebar">
+
+        <!-- Direct Contact Information (Updated with provided details) -->
+        <div class="strategic-links">
+            <h3>Key Leadership Contacts</h3>
+            
+            <p style="margin-bottom: 10px; font-size: 0.95rem;">
+                <strong>Director: Remigio Dingashe</strong><br>
+                <a href="mailto:dingashea@gmail.com" style="display: inline; padding: 0; background: none; border: none; font-weight: 500; color: #0077ff;">dingashea@gmail.com</a>
+            </p>
+            
+            <p style="margin-bottom: 15px; font-size: 0.95rem;">
+                <strong>General Manager: JH Satu</strong><br>
+                <a href="mailto:orioncarbon31@gmail.com" style="display: inline; padding: 0; background: none; border: none; font-weight: 500; color: #0077ff;">orioncarbon31@gmail.com</a>
+            </p>
+
+            <p style="margin-top: 15px; font-size: 1.1rem; font-weight: 700; color: #0b1f34;">
+                Phone: <a href="tel:+27730456272" style="display: inline; color: #0b1f34; text-decoration: underline;">0730456272</a>
+            </p>
+            
+        </div>
+        
+        <!-- Strategic Links for Conversion and Transparency -->
+        <div class="strategic-links">
+            <h3>Fast-Track Your Need</h3>
+            <!-- Conversion Link 1: Project Onboarding (BMC 1 - Development) -->
+            <a href="#" onclick="event.preventDefault(); displayMessage('Redirecting to Project Submission Portal (Demo).', 'default');">
+                Start a Carbon Credit Project &rarr;
+            </a>
+
+            <!-- Conversion Link 2: Academy Enrollment (BMC 3 - Human Capital) -->
+            <a href="#" onclick="event.preventDefault(); displayMessage('Redirecting to Orion Academy Enrollment (Demo).', 'default');">
+                Enroll in the MRV Academy &rarr;
+            </a>
+
+            <!-- Transparency Link 3: Blockchain Proof -->
+            <a href="https://etherscan.io/" target="_blank">
+                Verify Our Carbon Contract (Etherscan) &rarr;
+            </a>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="legal-links">
+        <a href="#" onclick="event.preventDefault(); displayMessage('Accessing Privacy Policy...', 'default');">Privacy Policy</a>
+        |
+        <a href="#" onclick="event.preventDefault(); displayMessage('Accessing Terms of Service...', 'default');">Terms of Service</a>
+    </div>
+    &copy; 2025 Orion Carbon. All Rights Reserved. Committed to Excellence and Transparency.
+</footer>
+
+<!-- External Scripts (only Tailwind needed here) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', handleSubmit);
+});
+
+/**
+ * Helper function for displaying messages in the custom box
+ * @param {string} message - The message text.
+ * @param {string} type - 'success', 'error', or 'default'.
+ */
+function displayMessage(message, type = 'default') {
+    const statusElement = document.getElementById('status-message');
+    statusElement.innerHTML = message;
+    statusElement.className = `status-box status-${type}`;
+
+    // Clear message after a few seconds if it's not the default prompt
+    if (type === 'success' || type === 'error') {
+        setTimeout(() => {
+            // Restore default message state
+            statusElement.innerHTML = "We aim to respond to all inquiries within 24 hours.";
+            statusElement.className = 'status-box status-default';
+        }, 8000); // Give the user 8 seconds to read the confirmation
+    }
+}
+
+/**
+ * Handles the form submission logic.
+ * @param {Event} event - The form submission event.
+ */
+function handleSubmit(event) {
+    event.preventDefault(); // Stop the default form submission
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Simple validation
+    if (!name || !email || !subject || !message) {
+        displayMessage('❌ Error: All fields are required to submit your inquiry.', 'error');
+        return;
+    }
+
+    // Email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        displayMessage('❌ Error: Please ensure you entered a valid email address.', 'error');
+        return;
+    }
+
+    // --- World-Class Form Submission (Simulated) ---
+    console.log("Simulated Form Submission:", { name, email, subject, message });
+
+    // Show success message
+    displayMessage(`✅ Thank you, ${name}! Your inquiry has been received with **Excellence**. We will be in touch shortly.`, 'success');
+
+    // Clear form fields
+    document.getElementById('contactForm').reset();
+}
+</script>
+
+</body>
+</html>
